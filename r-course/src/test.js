@@ -103,7 +103,32 @@ const forMaxCount = (value) => {
                 b++
             }
         }
-        return Math.max(a,b)
+        return Math.max(a, b)
     }
 }
 console.log("Max count:" + forMaxCount(ABS));
+
+// let arr = [1, 2, 4, 5]
+// const addd =  arr.reduce((a,b) =>{
+//     return a+b
+// })
+// console.log(addd);
+
+const findMissingNumber = (arr) => {
+    const n = arr.length + 1;
+    console.log(n);
+    const totalSum = (n * (n + 1)) / 2; 
+    console.log(totalSum);
+    const arrSum = arr.reduce((a, b) => a + b); 
+    console.log(arrSum);
+    const total = totalSum - arrSum; 
+    const arr2 = [total]
+    const final = arr.concat(arr2);
+    final.sort((a, b) => b - a)
+    return final;
+}
+
+
+const missingNum = findMissingNumber([1,2,3,5])
+console.log("Missing Number",missingNum);
+

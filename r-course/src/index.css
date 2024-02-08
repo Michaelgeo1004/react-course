@@ -13,8 +13,15 @@ li {
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #000000;
+  color: #00f7ff;
+}
+
+.inner{
+  font-family: 'Arial', sans-serif;
+  font-style:inherit;
+  font-weight: bold;
+  color: #000000;
 }
 
 .container {
@@ -23,10 +30,66 @@ body {
   padding: 20px;
 }
 
+.backgroundImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../src/images/AV\ Bg.jpg'); /* Set the path to your background image */
+  background-size: cover; /* Cover the entire container */
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; /* Move the background behind other content */
+}
+
+.containerR {
+  position: relative;
+  display: flex;
+  justify-content: space-between; /* Aligns the two containers at the ends */
+  padding: 0 20px; /* Add some padding to the sides */
+}
+
+.containerS {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-size: cover;
+  overflow: hidden;
+  width: 50%;
+  height: 490px;
+  gap: 1px;
+}
+
+.containerSS {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-size: cover;
+  overflow: hidden;
+  width: 50%;
+  height: 490px;
+  gap: 1px;
+}
+
+.containerS img , .containerSS img {
+  width: 10%;
+  height: 100%; 
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid white;
+  transition: all ease-in 0.5s;
+  cursor: pointer;
+}
+
+.containerS img:hover,.containerSS img:hover {
+  width: 100%;
+}
+
 /* Header Styles */
 header {
   background-color: #4285f4;
-  color: #fff;
+  color: #000000;
   padding: 10px 0;
   text-align: center;
 }
@@ -37,7 +100,7 @@ nav {
 }
 
 nav a {
-  color: #fff;
+  color: #e82b2b;
   text-decoration: none;
   margin: 0 15px;
   font-weight: bold;
@@ -56,9 +119,9 @@ main {
 
 /* Footer Styles */
 footer {
-  background-color: #333;
+  background-color: #0051ff;
   color: #fff;
-  padding: 20px 0;
+  padding: 10px 0;
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -114,11 +177,11 @@ ul li::before {
   margin-right: 0.5rem;
 }
 
-.item input[type="checkbox"]:focus + label {
+.item input[type="checkbox"]:focus+label {
   text-decoration: underline;
 }
 
-.item > label {
+.item>label {
   font-size: 0.75rem;
   flex-grow: 1;
 }
@@ -128,12 +191,25 @@ ul li::before {
   min-width: 48px;
   height: 36px;
   font-size: 1rem;
-  color: steelblue;
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
 
-.item svg:focus, 
+.item svg:focus,
 .item svg:hover {
   color: red;
   outline: none;
+}
+.back-btn{
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%);
+
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: rgb(34, 62, 78);
+  }
 }

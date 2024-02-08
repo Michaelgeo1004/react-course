@@ -15,6 +15,7 @@ const Footer = () => {
     const year = new Date()
     return (
         <footer>
+           
             Copyright &copy; {year.getFullYear()}
             <p>Be aware This is {name}</p>
             <button onClick={footerChanger} >Click me!</button>
